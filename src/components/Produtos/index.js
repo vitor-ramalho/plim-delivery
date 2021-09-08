@@ -30,10 +30,11 @@ const Produtos = () => {
     return (
         <>
             <ProdutosContainer>
-                <ProdutosCabecalho></ProdutosCabecalho>
+                <ProdutosCabecalho>Escolha seu predileto</ProdutosCabecalho>
                 <ProdutosSection>
                     {produtos.map(produtos =>
                         <ProdutoCard>
+                            <ProdutoImagem src={produtos.img} />
                             <ProdutoInfo>
                                 <ProdutoTitulo>{produtos.nome}</ProdutoTitulo>
                                 <ProdutoDesc>{produtos.descricao}</ProdutoDesc>

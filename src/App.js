@@ -12,7 +12,7 @@ function App() {
     <Router>
       <Switch>
       <Route path="/" exact component={Intro} />
-      <Route path="/pedido" component={Pedido} />
+      <Route path="/pedido" component={Pedido}/>
       </Switch>
     </Router>
     </>
