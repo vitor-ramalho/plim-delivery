@@ -10,6 +10,8 @@ import {
 import Navbar from '../../components/Navbar';
 import Sidebar from '../../components/Sidebar';
 import Produtos from '../../components/Produtos';
+import Combos from '../../components/Combos';
+import ProdutosAdicionais from '../../components/ProdutosAdicionais';
 
 
 
@@ -32,7 +34,9 @@ const Intro = () => {
                     </IntroItens>
                 </IntroConteudo>
             </IntroContainer>
+            <Combos />
             <Produtos />
+            <ProdutosAdicionais />
         </>
     )
 }
