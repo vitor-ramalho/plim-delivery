@@ -36,7 +36,7 @@ const Combos = () => {
                         <ComboInfo>
                             <ComboTitulo>{combos.nome}</ComboTitulo>
                             <ComboDesc>{combos.descricao}</ComboDesc>
-                            <ComboPreco>{combos.valor}</ComboPreco>
+                            <ComboPreco>R$ {combos.valor}</ComboPreco>
                             <ComboBtn>Peça Já</ComboBtn>
                         </ComboInfo>
                     </ComboCard>

@@ -36,7 +36,7 @@ const ProdutosAdicionais = () => {
                             <ProdutoAdicionalInfo>
                                 <ProdutoAdicionalTitulo>{produtosad.nome}</ProdutoAdicionalTitulo>
                                 <ProdutoAdicionalDesc>{produtosad.descricao}</ProdutoAdicionalDesc>
-                                <ProdutoAdicionalPreco>{produtosad.valor}</ProdutoAdicionalPreco>
+                                <ProdutoAdicionalPreco>R$ {produtosad.valor}</ProdutoAdicionalPreco>
                                 <ProdutoAdicionalBtn>Peça Já</ProdutoAdicionalBtn>
                             </ProdutoAdicionalInfo>
                         </ProdutoAdicionalCard>
