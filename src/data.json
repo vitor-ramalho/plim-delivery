@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "nome": "Cheedar Burguer",
+        "valor": 25,
+        "descricao": "(Pão, bife, cebola, piclis, alface, cheedar, bacon)",
+        "img": "https://plim-delivery.s3.amazonaws.com/a1bdf708416a4cb0adce8e4763c4ec36-hamburguer1.jpg",
+        "tipo": "1",
+        "createdAt": "2021-09-12T22:11:04.758Z",
+        "updatedAt": "2021-09-12T22:11:04.758Z"
+    },
+    {
+        "id": 1,
+        "nome": "Cheedar Burguer",
+        "valor": 25,
+        "descricao": "(Pão, bife, cebola, piclis, alface, cheedar, bacon)",
+        "img": "https://plim-delivery.s3.amazonaws.com/a1bdf708416a4cb0adce8e4763c4ec36-hamburguer1.jpg",
+        "tipo": "2",
+        "createdAt": "2021-09-12T22:11:04.758Z",
+        "updatedAt": "2021-09-12T22:11:04.758Z"
+    },
+    {
+        "id": 1,
+        "nome": "Cheedar Burguer",
+        "valor": 25,
+        "descricao": "(Pão, bife, cebola, piclis, alface, cheedar, bacon)",
+        "img": "https://plim-delivery.s3.amazonaws.com/a1bdf708416a4cb0adce8e4763c4ec36-hamburguer1.jpg",
+        "tipo": "3",
+        "createdAt": "2021-09-12T22:11:04.758Z",
+        "updatedAt": "2021-09-12T22:11:04.758Z"
+    },
+    {
+        "id": 1,
+        "nome": "Cheedar Burguer",
+        "valor": 25,
+        "descricao": "(Pão, bife, cebola, piclis, alface, cheedar, bacon)",
+        "img": "https://plim-delivery.s3.amazonaws.com/a1bdf708416a4cb0adce8e4763c4ec36-hamburguer1.jpg",
+        "tipo": "1",
+        "createdAt": "2021-09-12T22:11:04.758Z",
+        "updatedAt": "2021-09-12T22:11:04.758Z"
+    },
+    {
+        "id": 1,
+        "nome": "Cheedar Burguer",
+        "valor": 25,
+        "descricao": "(Pão, bife, cebola, piclis, alface, cheedar, bacon)",
+        "img": "https://plim-delivery.s3.amazonaws.com/a1bdf708416a4cb0adce8e4763c4ec36-hamburguer1.jpg",
+        "tipo": "2",
+        "createdAt": "2021-09-12T22:11:04.758Z",
+        "updatedAt": "2021-09-12T22:11:04.758Z"
+    },
+    {
+        "id": 1,
+        "nome": "Cheedar Burguer",
+        "valor": 25,
+        "descricao": "(Pão, bife, cebola, piclis, alface, cheedar, bacon)",
+        "img": "https://plim-delivery.s3.amazonaws.com/a1bdf708416a4cb0adce8e4763c4ec36-hamburguer1.jpg",
+        "tipo": "3",
+        "createdAt": "2021-09-12T22:11:04.758Z",
+        "updatedAt": "2021-09-12T22:11:04.758Z"
+    }
+]

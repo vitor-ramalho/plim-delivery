@@ -1,18 +1,29 @@
 import React from 'react'
-import { StyledForm, StyledFormWrapper, StyledInput } from './PedidoElementos'
+import { Background, PedidoContainer, PedidoContent, PedidoImg } from './PedidoElementos'
+import {IntroBtn} from '../Intro/IntroElementos';
+import img from '../../images/hamburguer-3.jpg'
 
-const Pedido = () => {
+const Pedido = (id) => {
+
+    console.log(id);
     return (
         <>
-            <StyledFormWrapper>
-                <StyledForm>
-                    <h2>Contact Form</h2>
-                    <label htmlFor="name"></label>
-                    <StyledInput type="text" name="name" />
-                    <label htmlFor="email"></label>
-                    <StyledInput type="email" name="email" />
-                </StyledForm>
-            </StyledFormWrapper>
+            <Background>
+                <PedidoContainer>
+                    <PedidoContent>
+                        <PedidoImg src={img} />
+                        <h1>Cheedar Burguer</h1>
+                        <p>(Pão, bife, cebola, piclis, alface, cheedar, bacon)</p>
+                        <p>R$25,00</p>
+                        <form>
+
+                           <p>Cheedar Burguer <input type="number"></input></p> 
+                           <p>Total: R$25,00</p>
+                           <IntroBtn type="submit">Adicionar ao carrinho</IntroBtn>
+                        </form>
+                    </PedidoContent>
+                </PedidoContainer>
+            </Background>
         </>
     )
 }

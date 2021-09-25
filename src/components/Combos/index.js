@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useProducts } from '../../Providers/ProductsProvider';
 import {
     ComboContainer,
     ComboCabecalho,
@@ -13,23 +14,13 @@ import {
 } from './CombosElementos';
 
 const Combos = () => {
-    const [combos, setCombos] = useState([]);
-
-    useEffect(() => {
-        async function fetchData() {
-            const response = await fetch('http://localhost:3001/combos');
-            const data = await response.json();
-            setCombos(data)
-            console.log(data)
-        }
-        fetchData();
-    }, [])
+    const {produtos} = useProducts();
 
     return (
         <ComboContainer>
             <ComboCabecalho>Combos</ComboCabecalho>
             <ComboSection>
-                {combos.map(combos =>
+                {produtos.filter(produto => produto.tipo == 2).map(combos =>
 
                     <ComboCard>
                         <ComboImagem src={combos.img}/>

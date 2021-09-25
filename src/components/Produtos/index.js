@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useProducts } from '../../Providers/ProductsProvider';
 import {
     ProdutoBotao,
     ProdutosCabecalho,
@@ -14,31 +15,23 @@ import {
 
 
 const Produtos = () => {
+    const [pedido, setPedido] = useState({});
+    const {produtos} = useProducts();
 
-    const [produtos, setProdutos] = useState([]);
-
-    useEffect(() => {
-        async function fetchData() {
-            const response = await fetch('http://localhost:3001/produtos');
-            const data = await response.json();
-            setProdutos(data)
-            console.log(data)
-        }
-        fetchData();
-    }, [])
+    //produtos.filter(produto => produto.tipo <= 1 ).map(burguers => console.log(burguers));
 
     return (
         <>
             <ProdutosContainer>
                 <ProdutosCabecalho>Escolha seu predileto</ProdutosCabecalho>
                 <ProdutosSection>
-                    {produtos.map(produtos =>
+                    {produtos.filter(produto => produto.tipo <= 1 ).map(burguers =>
                         <ProdutoCard>
-                            <ProdutoImagem src={produtos.img} />
+                            <ProdutoImagem src={burguers.img} />
                             <ProdutoInfo>
-                                <ProdutoTitulo>{produtos.nome}</ProdutoTitulo>
-                                <ProdutoDesc>{produtos.descricao}</ProdutoDesc>
-                                <ProdutoPreco>{produtos.valor}</ProdutoPreco>
+                                <ProdutoTitulo>{burguers.nome}</ProdutoTitulo>
+                                <ProdutoDesc>{burguers.descricao}</ProdutoDesc>
+                                <ProdutoPreco>R$ {burguers.valor}</ProdutoPreco>
                                 <ProdutoBotao to="/pedido"> Peça Já </ProdutoBotao>
                             </ProdutoInfo>
                         </ProdutoCard>

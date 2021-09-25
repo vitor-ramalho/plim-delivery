@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import { useProducts } from '../../Providers/ProductsProvider';
 import {
     ProdutosAdicionaisContainer,
     ProdutosAdicionaisCabecalho,
@@ -13,23 +14,14 @@ import {
 } from './ProdutosAdicionaisElementos';
 
 const ProdutosAdicionais = () => {
-    const [produtosAdicionais, setProdutosAdicionais] = useState([]);
+    const {produtos} = useProducts();
 
-    useEffect(() => {
-        async function fetchData() {
-            const response = await fetch('http://localhost:3001/outrosProdutos');
-            const data = await response.json();
-            setProdutosAdicionais(data)
-            console.log(data)
-        }
-        fetchData();
-    }, [])
     return (
         <>
             <ProdutosAdicionaisContainer>
                 <ProdutosAdicionaisCabecalho>Outros Produtos</ProdutosAdicionaisCabecalho>
                 <ProdutosAdicionaisSection>
-                    {produtosAdicionais.map(produtosad =>
+                    {produtos.filter(produto => produto.tipo >= 3).map(produtosad =>
 
                         <ProdutoAdicionalCard>
                             <ProdutoAdicionalImg src={produtosad.img} />
