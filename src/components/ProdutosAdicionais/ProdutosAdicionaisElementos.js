@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import ComboPic from '../../images/hamburguer-3.jpg';
 
 export const ProdutosAdicionaisContainer = styled.div`
     width: 100%;

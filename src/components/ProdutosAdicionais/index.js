@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import { useProducts } from '../../Providers/ProductsProvider';
 import {
     ProdutosAdicionaisContainer,
@@ -14,7 +14,7 @@ import {
 } from './ProdutosAdicionaisElementos';
 
 const ProdutosAdicionais = () => {
-    const {produtos} = useProducts();
+    const { produtos } = useProducts();
 
     return (
         <>
@@ -23,7 +23,7 @@ const ProdutosAdicionais = () => {
                 <ProdutosAdicionaisSection>
                     {produtos.filter(produto => produto.tipo >= 3).map(produtosad =>
 
-                        <ProdutoAdicionalCard>
+                        <ProdutoAdicionalCard key={produtosad.id}>
                             <ProdutoAdicionalImg src={produtosad.img} />
                             <ProdutoAdicionalInfo>
                                 <ProdutoAdicionalTitulo>{produtosad.nome}</ProdutoAdicionalTitulo>

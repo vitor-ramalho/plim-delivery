@@ -1,6 +1,5 @@
 
-import Produtos from "./components/Produtos";
-import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Pedido from "./pages/Pedido/index.js";
 import Intro from "./pages/Intro";
 import { GlobalStyle } from "./GlobalStyles";

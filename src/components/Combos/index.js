@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { useProducts } from '../../Providers/ProductsProvider';
 import {
     ComboContainer,
@@ -14,16 +14,15 @@ import {
 } from './CombosElementos';
 
 const Combos = () => {
-    const {produtos} = useProducts();
+    const { produtos } = useProducts();
 
     return (
         <ComboContainer>
             <ComboCabecalho>Combos</ComboCabecalho>
             <ComboSection>
-                {produtos.filter(produto => produto.tipo == 2).map(combos =>
-
-                    <ComboCard>
-                        <ComboImagem src={combos.img}/>
+                {produtos.filter(produto => produto.tipo === 2).map(combos =>
+                    <ComboCard key={combos.id}>
+                        <ComboImagem src={combos.img} />
                         <ComboInfo>
                             <ComboTitulo>{combos.nome}</ComboTitulo>
                             <ComboDesc>{combos.descricao}</ComboDesc>

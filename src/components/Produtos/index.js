@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { useProducts } from '../../Providers/ProductsProvider';
 import {
     ProdutoBotao,
@@ -15,8 +15,7 @@ import {
 
 
 const Produtos = () => {
-    const [pedido, setPedido] = useState({});
-    const {produtos} = useProducts();
+    const { produtos } = useProducts();
 
     //produtos.filter(produto => produto.tipo <= 1 ).map(burguers => console.log(burguers));
 
@@ -25,8 +24,8 @@ const Produtos = () => {
             <ProdutosContainer>
                 <ProdutosCabecalho>Escolha seu predileto</ProdutosCabecalho>
                 <ProdutosSection>
-                    {produtos.filter(produto => produto.tipo <= 1 ).map(burguers =>
-                        <ProdutoCard>
+                    {produtos.filter(produto => produto.tipo <= 1).map(burguers =>
+                        <ProdutoCard key={burguers.id}>
                             <ProdutoImagem src={burguers.img} />
                             <ProdutoInfo>
                                 <ProdutoTitulo>{burguers.nome}</ProdutoTitulo>
