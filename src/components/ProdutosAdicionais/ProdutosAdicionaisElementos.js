@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const ProdutosAdicionaisContainer = styled.div`
@@ -8,7 +9,7 @@ export const ProdutosAdicionaisContainer = styled.div`
     color: #fff;
 `;
 
-export const ProdutoAdicionalBtn = styled.button`
+export const ProdutoAdicionalBtn = styled(Link)`
     font-size: 1rem;
     padding: 1rem 4rem;
     border: none;

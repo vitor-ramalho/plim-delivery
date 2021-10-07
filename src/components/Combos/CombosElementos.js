@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const ComboContainer = styled.div`
@@ -8,7 +9,7 @@ export const ComboContainer = styled.div`
     color: #fff;
 `;
 
-export const ComboBtn = styled.button`
+export const ComboBtn = styled(Link)`
     font-size: 1rem;
     padding: 1rem 4rem;
     border: none;

@@ -3,6 +3,7 @@ import React, {useState, useEffect} from 'react'
 
 export const ProductsContext = React.createContext({});
 
+
 export const ProductsProvider = (props) => {
     const [produtos, setProdutos] = useState([
         {

@@ -13,7 +13,7 @@ import Produtos from '../../components/Produtos';
 import Combos from '../../components/Combos';
 import ProdutosAdicionais from '../../components/ProdutosAdicionais';
 import Footer from '../../components/Footer';
-
+import { ProductsProvider } from '../../Providers/ProductsProvider';
 
 
 const Intro = () => {
@@ -24,21 +24,23 @@ const Intro = () => {
     }
     return (
         <>
-            <IntroContainer>
-                <Navbar toggle={toggle} />
-                <Sidebar isOpen={isOpen} toggle={toggle} />
-                <IntroConteudo>
-                    <IntroItens>
-                        <IntroH1>Melhor Hamburguer de PL</IntroH1>
-                        <IntroP>Plim Hamburgueria</IntroP>
-                        <IntroBtn>Faça o seu pedido</IntroBtn>
-                    </IntroItens>
-                </IntroConteudo>
-            </IntroContainer>
-            <Combos />
-            <Produtos />
-            <ProdutosAdicionais />
-            <Footer />
+            <ProductsProvider>
+                <IntroContainer>
+                    <Navbar toggle={toggle} />
+                    <Sidebar isOpen={isOpen} toggle={toggle} />
+                    <IntroConteudo>
+                        <IntroItens>
+                            <IntroH1>Melhor Hamburguer de PL</IntroH1>
+                            <IntroP>Plim Hamburgueria</IntroP>
+                            <IntroBtn>Faça o seu pedido</IntroBtn>
+                        </IntroItens>
+                    </IntroConteudo>
+                </IntroContainer>
+                <Combos />
+                <Produtos />
+                <ProdutosAdicionais />
+                <Footer />
+            </ProductsProvider>
         </>
     )
 }

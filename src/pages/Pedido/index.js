@@ -1,29 +1,83 @@
-import React from 'react'
-import { Background, PedidoContainer, PedidoContent, PedidoImg } from './PedidoElementos'
-import {IntroBtn} from '../Intro/IntroElementos';
-import img from '../../images/hamburguer-3.jpg'
+import React, { useState, useEffect } from 'react'
+import {
+    PedidoImg,
+    StyledButton,
+    StyledFieldset,
+    StyledForm,
+    Container,
+    StyledFormWrapper,
+    StyledInput,
+    StyledTextArea
+} from './PedidoElementos'
+import axios from 'axios';
 
-const Pedido = (id) => {
+const Pedido = () => {
+    const [quantidade, setQuantidade] = useState(0);
+    const [produto, setProduto] = useState({});
+    const produtoId = localStorage.getItem('produto_id');
+    const [form, setForm] = useState(
+        {
 
-    console.log(id);
+            id: produtoId,
+            quantidade: quantidade,
+            observacoes: '',
+
+        }
+    );
+
+    console.log('local storage ', produtoId);
+
+
+    useEffect(() => {
+        axios
+            .get(`http://localhost:3001/produto/${produtoId}`)
+            .then((response) => {
+                setProduto(response.data);
+                console.log('fetch result', response.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }, [produtoId])
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        localStorage.removeItem("produto_id");
+        console.log(form);
+    }
+    const handleInput = (e) => {
+        e.preventDefault();
+        const inputName = e.currentTarget.name;
+        const value = e.currentTarget.value
+
+        setForm(prev => ({ ...prev, [inputName]: value }));
+
+        console.log(form);
+    }
+
     return (
         <>
-            <Background>
-                <PedidoContainer>
-                    <PedidoContent>
-                        <PedidoImg src={img} />
-                        <h1>Cheedar Burguer</h1>
-                        <p>(Pão, bife, cebola, piclis, alface, cheedar, bacon)</p>
-                        <p>R$25,00</p>
-                        <form>
-
-                           <p>Cheedar Burguer <input type="number"></input></p> 
-                           <p>Total: R$25,00</p>
-                           <IntroBtn type="submit">Adicionar ao carrinho</IntroBtn>
-                        </form>
-                    </PedidoContent>
-                </PedidoContainer>
-            </Background>
+            <Container>
+                <StyledFormWrapper>
+                    <StyledForm onSubmit={handleSubmit}>
+                        <PedidoImg src={produto.img} />
+                        <h2>{produto.nome}</h2>
+                        <StyledInput
+                            type="number"
+                            name="quantidade"
+                            value={form.quantidade}
+                            onChange={handleInput}
+                        />
+                        <label htmlFor="observacoes">Observações:</label>
+                        <StyledTextArea
+                            name="observacoes"
+                            value={form.observacoes}
+                            onChange={handleInput}
+                        />
+                        <StyledButton type="submit">Adicionar ao carrinho</StyledButton>
+                    </StyledForm>
+                </StyledFormWrapper>
+            </Container>
         </>
     )
 }

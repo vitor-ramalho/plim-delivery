@@ -27,7 +27,7 @@ const Combos = () => {
                             <ComboTitulo>{combos.nome}</ComboTitulo>
                             <ComboDesc>{combos.descricao}</ComboDesc>
                             <ComboPreco>R$ {combos.valor}</ComboPreco>
-                            <ComboBtn>Peça Já</ComboBtn>
+                            <ComboBtn to="/pedido" onClick={() => localStorage.setItem('produto_id', combos.id)}>Peça Já</ComboBtn>
                         </ComboInfo>
                     </ComboCard>
                 )}

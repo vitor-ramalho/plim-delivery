@@ -30,8 +30,8 @@ const Produtos = () => {
                             <ProdutoInfo>
                                 <ProdutoTitulo>{burguers.nome}</ProdutoTitulo>
                                 <ProdutoDesc>{burguers.descricao}</ProdutoDesc>
-                                <ProdutoPreco>R$ {burguers.valor}</ProdutoPreco>
-                                <ProdutoBotao to="/pedido"> Peça Já </ProdutoBotao>
+                                <ProdutoPreco>R$ {burguers.valor} - {burguers.id}</ProdutoPreco>
+                                <ProdutoBotao to="/pedido" onClick={() => localStorage.setItem('produto_id', burguers.id)}> Peça Já </ProdutoBotao>
                             </ProdutoInfo>
                         </ProdutoCard>
                     )}
